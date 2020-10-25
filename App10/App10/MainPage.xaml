@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App10.MainPage">
+
+    <Grid Padding="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Row="0" Grid.ColumnSpan="1" x:Name="lblMensaje" Text =""  HorizontalOptions="Center" FontSize="40"></Label>
+        <Entry Grid.Row="1" Grid.ColumnSpan="2" x:Name="txtNombre" Placeholder="Nombre"></Entry>
+        <Entry Grid.Row="2" Grid.ColumnSpan="2" x:Name="txtCorreo" Placeholder="Correo" Keyboard="Email"></Entry>
+        <Button Grid.Row="3" Grid.Column="0" Clicked="button_Clicked" Text="Agregar"></Button>
+        <Button Grid.Row="3" Grid.Column="1" Clicked="button_modificar" Text="Modificar"></Button>
+        <Button Grid.Row="3" Grid.Column="2" Clicked="cmdLimpiar" Text="Eliminar"></Button>
+        <Button Grid.Row="4" Grid.Column="2" Clicked="Secundaria" Text="Otra página"></Button>
+        <ListView Grid.Row="5" Grid.ColumnSpan="2" x:Name="lstPersonas" ItemSelected="lstPersonas_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Nombre}" Detail="{Binding Correo}"></TextCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+
+</ContentPage>
