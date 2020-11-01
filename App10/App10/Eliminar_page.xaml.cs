@@ -22,7 +22,10 @@ namespace App10
 
         private void regresar(object sender, EventArgs e)
         {
+            var persona = BindingContext as App.Persona;
+            //App.Personas.Add(persona);
             Navigation.PopAsync();
+            
 
 
         }

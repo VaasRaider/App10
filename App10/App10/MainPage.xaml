@@ -16,14 +16,11 @@
             <ColumnDefinition Width="*"></ColumnDefinition>
             <ColumnDefinition Width="*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Label Grid.Row="0" Grid.ColumnSpan="1" x:Name="lblMensaje" Text =""  HorizontalOptions="Center" FontSize="40"></Label>
-        <Entry Grid.Row="1" Grid.ColumnSpan="2" x:Name="txtNombre" Placeholder="Nombre"></Entry>
-        <Entry Grid.Row="2" Grid.ColumnSpan="2" x:Name="txtCorreo" Placeholder="Correo" Keyboard="Email"></Entry>
-        <Button Grid.Row="3" Grid.Column="0" Clicked="button_Clicked" Text="Agregar"></Button>
-        <Button Grid.Row="3" Grid.Column="1" Clicked="button_modificar" Text="Modificar"></Button>
-        <Button Grid.Row="3" Grid.Column="2" Clicked="cmdLimpiar" Text="Eliminar"></Button>
-        <Button Grid.Row="4" Grid.Column="2" Clicked="Secundaria" Text="Otra página"></Button>
-        <ListView Grid.Row="5" Grid.ColumnSpan="2" x:Name="lstPersonas" ItemSelected="lstPersonas_ItemSelected">
+
+        <Button Grid.Row="3" Grid.Column="0" Clicked="button_Clicked" Text="Nuevo"></Button>
+        <Button Grid.Row="3" Grid.Column="1" x:Name ="editar"  Clicked="button_modificar" Text="Modificar" IsVisible="false"></Button>
+        <Button Grid.Row="3" Grid.Column="2" x:Name ="eliminar" Clicked="cmdLimpiar" Text="Eliminar" IsVisible="false"></Button>
+        <ListView Grid.Row="4" Grid.ColumnSpan="2" x:Name="lstPersonas" ItemSelected="lstPersonas_ItemSelected">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <TextCell Text="{Binding Nombre}" Detail="{Binding Correo}"></TextCell>
